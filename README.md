@@ -18,7 +18,7 @@
 
 ## 📌 Overview
 
-Docker / OCI container & image security auditor (CIS Docker Benchmark)
+OContainer — Docker / OCI Container Security Auditor. It provides daemon exposure — docker.sock perms, TCP 2375/2376, daemon.json hardening, docker info, auditd rules; Dockerfile linter — root, :latest, ADD, curl|bash, ENV/ARG secrets, apt hygiene, HEALTHCHECK, layers. Operators can export results (including machine-readable formats) and gate CI with severity thresholds where supported.
 
 ---
 
@@ -30,7 +30,6 @@ Docker / OCI container & image security auditor (CIS Docker Benchmark)
 - Compose auditor with crash-proof YAML-subset parser
 - Secrets scanner, CIS Docker mapping, score A–F
 - Export TXT/MD/JSON/CSV, save chooser, clipboard, CLI
-- Audit / read-only: never changes anything
 
 ---
 
@@ -44,7 +43,10 @@ Docker / OCI container & image security auditor (CIS Docker Benchmark)
 ## 🚀 Usage
 
 ```bash
-./OContainer
+./OContainer                                     # interactive menu
+./OContainer --path ./config_or_ruleset
+./OContainer --json -o report.json
+./OContainer --help
 ```
 
 ---
